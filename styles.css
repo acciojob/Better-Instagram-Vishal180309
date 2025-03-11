@@ -1,38 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    width: 80%;
-    margin: 40px auto;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 10px;
+    justify-content: center;
 }
 
 .grid-item {
-    width: 100%;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
+    cursor: grab;
+    transition: transform 0.2s ease-in-out;
 }
 
-#div1 {
-    background-image: url('image1.jpg');
-}
+/* Add images for divs */
+#div1 { background-image: url('https://source.unsplash.com/150x150/?nature'); }
+#div2 { background-image: url('https://source.unsplash.com/150x150/?water'); }
+#div3 { background-image: url('https://source.unsplash.com/150x150/?mountain'); }
+#div4 { background-image: url('https://source.unsplash.com/150x150/?beach'); }
+#div5 { background-image: url('https://source.unsplash.com/150x150/?forest'); }
+#div6 { background-image: url('https://source.unsplash.com/150x150/?sunset'); }
 
-#div2 {
-    background-image: url('image2.jpg');
-}
-
-#div3 {
-    background-image: url('image3.jpg');
-}
-
-#div4 {
-    background-image: url('image4.jpg');
-}
-
-#div5 {
-    background-image: url('image5.jpg');
-}
-
-#div6 {
-    background-image: url('image6.jpg');
+/* Dragging effect */
+.grid-item.dragging {
+    opacity: 0.5;
+    transform: scale(1.1);
 }
